@@ -7,7 +7,8 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.DB_CONNECTION_STRING);
 
 // Route imports
-const users = require('./Routes/UserRoutes')
+const users = require('./Routes/UserRoutes');
+const books = require('./Routes/BookRoutes');
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/users', users);
+app.use('/books', books);
 
 app.get('/*', (req, res) => {
 	res.status(404).json({message: 'Request path could not be found!'});
