@@ -64,7 +64,18 @@ const updateUser = async (req, res) => {
 // @access Private
 
 const deleteUser = async (req, res) => {
-	res.status(200).json({ message: 'Made a request to delete a user' });
+	try {
+		const { id } = req.body;
+		
+		if (!id) return res.status(400).json({ message: 'User ID is requred' })
+
+		await User.findByIdAndDelete(id);
+		return res.status(200).json({ message: 'User deleted!'});
+
+	} catch(err) {
+		console.log(err);
+		return res.status(500).json({ message: '500 Internal Error' });
+	}
 }
 
 module.exports = { getUsers, createUser, updateUser, deleteUser }
