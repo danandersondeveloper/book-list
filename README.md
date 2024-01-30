@@ -10,12 +10,12 @@ Fontend:
 [] Private dashboard for adiministrator user-role where they can update the full book list.
 
 Backend:
-[] Bcrypt for password encription.
-[] Nodmon for development server refresh.
+[x] Bcrypt for password encription.
+[x] Nodmon for development server refresh.
 [] CORS for data transfer.
-[] Mongoose for talking to and updating databases.
-[] Morgan for logging.
-[] Helmet for simple security.
+[x] Mongoose for talking to and updating databases.
+[x] Morgan for logging.
+[x] Helmet for simple security.
 [] Administrators - Create, Read, Update, Delete
 [] Users - Read main catalogue, create lists update or delete (Read books, wishlist)
 
